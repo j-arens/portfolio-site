@@ -112,8 +112,7 @@ input[type="submit"] {
     vertical-align: middle;
     white-space: nowrap;
 
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: color(var(--color-accent) shade(25%));
     }
 

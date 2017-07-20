@@ -34,8 +34,10 @@ const env = {
   prod: argv.production || false,
   staging: argv.staging || false,
   distPath: './distribution/dpi-spine',
-  devPath: '/home/josh/dev/vvv/www/wordpress-default/public_html/wp-content/themes',
-  devUrl: 'local.wordpress.dev'
+  devPath: 'C:/Users/DPI/Desktop/dev-sites/portfolio-site/wp-content/themes',
+  devUrl: 'localhost',
+  // devPath: '/home/josh/dev/vvv/www/wordpress-default/public_html/wp-content/themes',
+  // devUrl: 'local.wordpress.dev'
 }
 
 /**

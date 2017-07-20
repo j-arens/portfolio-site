@@ -49,12 +49,11 @@ a {
     transition: color 0.1s linear;
 
     &:hover {
-        color: var(--color-link-hover);
+        color: var(--color-accent);
     }
 
     &:active,
     &:focus {
-        color: var(--color-link-hover);
         outline: none;
     }
 }

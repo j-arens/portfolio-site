@@ -3,6 +3,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 4em;
     }
 
     &avatar {
@@ -11,6 +12,7 @@
         border-radius: 50%;
         overflow: hidden;
         margin-bottom: 1.875em;
+        box-shadow: 0 0 15px 7px rgba(193, 216, 224, 0.5);
     }
 
     &img {
@@ -29,5 +31,94 @@
         font-size: 1.25em;
         margin: 0;
         color: var(--color-neutral-dk);
+    }
+
+    &contact {
+        display: flex;
+        flex-direction: column;
+        max-width: 16em;
+        margin: 0 auto 4em auto;
+    }
+
+    &btn + &btn {
+        margin-top: 1em;
+    }
+
+    &code-links {
+        display: flex;
+        justify-content: space-between;
+        max-width: 26em;
+        margin: 0 auto 3em auto;
+    }
+
+    &code-link {
+        display: flex;
+
+        &:hover {
+            & .profile__link-icon .svg-icon {
+                fill: currentColor;
+            }
+        }
+    }
+
+    &link-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4em;
+        width: 4em;
+        margin-right: 0.5em;
+
+        & .svg-icon {
+            width: 100%;
+            height: 100%;
+            fill: var(--color-neutral-dk);
+        }
+
+        & .svg-icon__codepen {
+            transform: translate(4px, 0);
+        }
+
+        & .svg-icon__github {
+           transform: scale(0.8) translate(0, -10px);
+        }
+    }
+
+    &link-domain {
+        color: var(--color-neutral-dk);
+        margin-bottom: 0.25em;
+    }
+
+    &link-path {
+        color: var(--color-font-base);
+        margin: 0;
+        font-size: 1.65em;
+    }
+
+    &social-links {
+        max-width: 25.5em;
+        margin: 0 auto;
+    }
+
+    &social-link-item + &social-link-item {
+        margin-top: 1.5em;
+    }
+
+    &social-link {
+        display: flex;
+        align-items: center;
+        color: var(--color-neutral-dk);
+        font-size: 1em;
+
+        & .profile__link-icon {
+            width: 1.5em;
+            height: 1.5em;
+            margin-right: 1.25rem;
+        }
+
+        & .svg-icon {
+            width: 100%;
+            height: 100%;
+        }
     }
 }

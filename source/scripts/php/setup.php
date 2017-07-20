@@ -82,4 +82,10 @@ add_action('after_setup_theme', function () {
         remove_menu_page( 'edit.php' );
     	remove_menu_page( 'edit-comments.php' );
     });
+
+    /**
+    * Remove the admin bar from the front end
+    */
+    add_filter('show_admin_bar', '__return_false');
+
 });
