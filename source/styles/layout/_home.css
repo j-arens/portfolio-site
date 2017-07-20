@@ -1,0 +1,14 @@
+body.home {
+    & .main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .profile {
+        width: calc(33.3333% - 1em);
+    }
+
+    & .resume {
+        width: calc(66% - 1em);
+    }
+}

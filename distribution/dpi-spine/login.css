@@ -1,0 +1,22 @@
+/**
+* Login styles
+*/body.login{
+
+    /**
+    * Logo / link
+    */
+
+    /**
+    * Login form
+    */
+
+    /**
+    * Links
+    */}body.login div#login h1 a{/*background-image: url();*/}body.login div#login form#loginform{/**
+        * Labels
+        *//**
+        * Inputs
+        *//**
+        * Buttons
+        */}body.login div#login form#loginform p.forgetmenot{/* remember me label */}body.login div#login form#loginform input#user-login{/* username input */}body.login div#login form#loginform input#user_pass{/* password input */}body.login div#login form#loginform input#rememberme{/* remember me checkbox */}body.login div#login form#loginform p.submit input#wp-submit{/* login button *//*border-color: ;*//*box-shadow: 0 1px 0 your-color;*//*text-shadow: 0 -1px 1px your-color, 1px 0 1px your-color, 0 1px 1px your-color, -1px 0 1px your-color;*/}body.login div#login p#nav a{/* lost password link */}body.login div#login p#backtoblog a{/* back to site link */}
+/*# sourceMappingURL=login.css.map */
