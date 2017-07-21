@@ -196,10 +196,7 @@ export default class FormsController extends AjaxForm {
 
         super.send({
             url: 'test',
-            data: {
-                nonce: '',
-                values: this.mapFormValues()
-            }
+            data: {values: this.mapFormValues()}
         }).then(() => {
             this.flashMessage().append('success', 'Thanks! I\'ll get back to you as soon as I can.');
         }).catch(() => {
