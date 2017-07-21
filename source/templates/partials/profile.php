@@ -1,7 +1,4 @@
 <section class="card profile">
-    <div class="profile__polycrosses">
-        <?= get_template_part('svg/cross-poly') ?>
-    </div>
     <div class="profile__person">
         <figure class="profile__avatar">
             <img src="https://source.unsplash.com/random/250x250" alt="mugshot" class="profile__img">
