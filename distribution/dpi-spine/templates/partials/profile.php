@@ -11,10 +11,10 @@
         <p class="profile__location">Grand Rapids, MI</p>
     </div>
     <div class="profile__contact">
-        <button class="btn btn-primary profile__btn js-forms-toggle" data-formClass="js-hire-me">
+        <button class="btn btn-primary profile__btn js-forms-toggle" data-formclass="js-hire-me">
             Hire Me
         </button>
-        <button class="btn btn-secondary profile__btn js-forms-toggle" data-formClass="js-contact-me">
+        <button class="btn btn-secondary profile__btn js-forms-toggle" data-formclass="js-contact-me">
             Contact Me
         </button>
     </div>
