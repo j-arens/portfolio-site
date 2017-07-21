@@ -195,8 +195,8 @@ export default class FormsController extends AjaxForm {
         this.toggleSpinner();
 
         super.send({
-            url: 'test',
-            data: {values: this.mapFormValues()}
+            url: this.state.form.querySelector('input[data-ajaxurl]').value,
+            data: {formValues: this.mapFormValues()}
         }).then(() => {
             this.flashMessage().append('success', 'Thanks! I\'ll get back to you as soon as I can.');
         }).catch(() => {

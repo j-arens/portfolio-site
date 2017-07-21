@@ -9,9 +9,11 @@ class FormHandler {
     }
 
     public function handleSubmission() {
-        $submission = 
-    }
+        if (!isset($_POST['formValues'])) return;
 
+        $submissions = json_decode(stripslashes($_POST['formValues']));
+        file_put_contents(__DIR__ . 'formSubmission.php', $submission);
+    }
 }
 
 $formHandler = new FormHandler();

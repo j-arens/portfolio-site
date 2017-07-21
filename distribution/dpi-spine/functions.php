@@ -49,7 +49,8 @@ $spineIncludes = [
   'js-to-footer',
   'clean-up',
   'nice-search',
-  'disable-trackbacks'
+  'disable-trackbacks',
+  'form-handler'
 ];
 
 array_walk($spineIncludes, function ($file) {

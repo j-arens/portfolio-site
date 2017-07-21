@@ -14,5 +14,6 @@
         </label>
         <?= get_template_part('partials/recaptcha') ?>
         <input type="submit" value="Submit">
+        <input type="hidden" data-ajaxurl value="<?= admin_url('admin-ajax.php') ?>">
     </form>
 </div>
