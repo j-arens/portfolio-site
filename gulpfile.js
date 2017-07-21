@@ -34,10 +34,10 @@ const env = {
   prod: argv.production || false,
   staging: argv.staging || false,
   distPath: './distribution/dpi-spine',
-  devPath: 'C:/Users/DPI/Desktop/dev-sites/portfolio-site/wp-content/themes',
-  devUrl: 'localhost',
-  // devPath: '/home/josh/dev/vvv/www/wordpress-default/public_html/wp-content/themes',
-  // devUrl: 'local.wordpress.dev'
+//   devPath: 'C:/Users/DPI/Desktop/dev-sites/portfolio-site/wp-content/themes',
+//   devUrl: 'localhost',
+  devPath: '/home/josh/dev/vvv/www/wordpress-default/public_html/wp-content/themes',
+  devUrl: 'local.wordpress.dev'
 }
 
 /**
@@ -91,12 +91,6 @@ gulp.task('js', () => gulp.src('./source/scripts/js/main.js')
     .pipe(gulp.dest(path.resolve(env.distPath + '/scripts/js')))
 );
 
-gulp.task('single-js', () => gulp.src('./source/scripts/js/single/**/*.js')
-    .pipe(named())
-    .pipe(webpack(require('./webpack.single.js')))
-    .pipe(gulp.dest(path.resolve(env.distPath + '/scripts/js')))
-);
-
 /**
 * Assets
 */
@@ -144,7 +138,7 @@ gulp.task('watch', function() {
   gulp.watch('./source/styles/**/*.css', ['styles']);
 
   // js scripts
-  gulp.watch('./source/scripts/js/**/*.js', ['js', 'single-js']);
+  gulp.watch('./source/scripts/js/**/*.js', ['js']);
 
   //php
   gulp.watch('./source/**/*.php', ['migrate']);
@@ -164,7 +158,7 @@ gulp.task('watch', function() {
 /**
 * Gulp commands
 */
-gulp.task('build', ['styles', 'js', 'single-js', 'assets', 'migrate']);
+gulp.task('build', ['styles', 'js', 'assets', 'migrate']);
 
 gulp.task('build-watch', ['build', 'watch']);
 

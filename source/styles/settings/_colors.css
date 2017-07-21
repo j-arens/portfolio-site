@@ -39,7 +39,7 @@
     --color-h6:                var(--color-secondary);
 
     /* Form colors */
-    --color-form-border:       var(--color-neutral-lt);
-    --color-form-border-hover: var(--color-neutral);
+    --color-form-border:       var(--color-primary-dk);
+    --color-form-border-hover: var(--color-primary-dk);
     --color-form-border-focus: var(--color-accent);
 }

@@ -3,5 +3,8 @@ require('babel-polyfill');
 
 // import local dependencies
 import { docReady } from './utils/docReady';
+// import { crossPoly } from './cross-poly';
+import { formsWrap } from './forms';
 
-docReady(() => console.log('hi'));
+// docReady(crossPoly);
+docReady(formsWrap);

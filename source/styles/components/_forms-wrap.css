@@ -1,0 +1,45 @@
+.forms {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(188, 207, 214, 0.95);
+}
+
+.forms__ {
+    &toggle {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 3px;
+        padding: 0 0.25em 0.25em;
+
+        & .svg-icon__x {
+            fill: var(--color-white);
+            width: 4em;
+            height: 4em;
+            margin-bottom: .25em;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &container {
+        max-width: 50em;
+        width: 100%;
+        margin: 0 auto;
+        padding: 3em;
+    }
+}

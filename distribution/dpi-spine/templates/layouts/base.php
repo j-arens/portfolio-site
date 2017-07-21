@@ -18,6 +18,7 @@
         <?php load_template(template()->main()); ?>
       </main>
     </div>
+    <?= get_template_part('partials/form-container') ?>
     <?= wp_footer(); ?>
   </body>
 </html>

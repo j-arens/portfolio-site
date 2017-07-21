@@ -46,21 +46,21 @@ select[multiple=multiple] {
     box-sizing: inherit;
     background-color: #fff;
     border-radius: var(--base-border-radius);
-    border: 1px solid var(--form-border-color);
+    border: 1px solid var(--color-form-border);
     box-shadow: var(--form-box-shadow);
     font-family: var(--form-font-family);
     font-size: var(--form-font-size);
-    margin-bottom: calc(var(--base-spacing) / 2);
-    padding: calc(var(--base-spacing / 3)) calc(var(--base-spacing / 3));
+    margin-bottom: calc(var(--base-spacing) + 0.75em);
+    padding: 0.75em;
     width: 100%;
     transition: border-color;
 
     &:hover {
-        border-color: var(--form-border-color-hover);
+        border-color: var(--color-form-border-hover);
     }
 
     &:focus {
-        border-color: var(--form-border-color-focus);
+        border-color: var(--color-form-border-focus);
         box-shadow: var(--form-box-shadow-focus);
         outline: none;
     }
@@ -111,6 +111,7 @@ input[type="submit"] {
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
+    border-radius: 3px;
 
     &:hover {
         background-color: color(var(--color-accent) shade(25%));
@@ -120,4 +121,8 @@ input[type="submit"] {
         cursor: not-allowed;
         opacity: 0.5;
     }
+}
+
+.g-recaptcha {
+    margin-bottom: calc(var(--base-spacing) + 0.75em);
 }

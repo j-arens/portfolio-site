@@ -8,12 +8,13 @@
         </figure>
         <h1 class="profile__name">Joshua Arens</h1>
         <h2 class="profile__tagline">Web Developer / Designer</h2>
+        <p class="profile__location">Grand Rapids, MI</p>
     </div>
     <div class="profile__contact">
-        <button class="btn btn-primary profile__btn">
+        <button class="btn btn-primary profile__btn js-forms-toggle" data-formClass="js-hire-me">
             Hire Me
         </button>
-        <button class="btn btn-secondary profile__btn">
+        <button class="btn btn-secondary profile__btn js-forms-toggle" data-formClass="js-contact-me">
             Contact Me
         </button>
     </div>

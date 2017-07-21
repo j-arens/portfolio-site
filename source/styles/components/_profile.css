@@ -8,6 +8,7 @@
         position: absolute;
         bottom: 1em;
         right: 1em;
+        z-index: 0;
         width: 20em;
         height: 20em;
 
@@ -25,7 +26,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 4em;
+        margin-bottom: 3em;
     }
 
     &avatar {
@@ -49,10 +50,18 @@
         color: var(--color-font-base);
     }
 
+    &tagline,
+    &location {
+        color: var(--color-neutral-dk);
+    }
+
     &tagline {
         font-size: 1.25em;
+        margin: 0 0 0.6rem 0;
+    }
+
+    &location {
         margin: 0;
-        color: var(--color-neutral-dk);
     }
 
     &contact {
@@ -71,6 +80,8 @@
         justify-content: space-between;
         max-width: 26em;
         margin: 0 auto 3em auto;
+        position: relative;
+        z-index: 1;
     }
 
     &code-link {
@@ -118,6 +129,8 @@
     }
 
     &social-links {
+        position: relative;
+        z-index: 1;
         max-width: 25.5em;
         margin: 0 auto;
     }
@@ -127,7 +140,7 @@
     }
 
     &social-link {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         color: var(--color-neutral-dk);
         font-size: 1em;
