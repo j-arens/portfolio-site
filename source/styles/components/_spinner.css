@@ -1,0 +1,27 @@
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    animation: fadeIn .2s ease;
+}
+
+.spinner__ {
+    &icon {
+        width: 10em;
+        height: 10em;
+    }
+
+    &circle {
+        fill: none;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke: var(--color-accent);
+        transform-origin: center center;
+    }
+}

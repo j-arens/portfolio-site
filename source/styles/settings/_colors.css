@@ -42,4 +42,8 @@
     --color-form-border:       var(--color-primary-dk);
     --color-form-border-hover: var(--color-primary-dk);
     --color-form-border-focus: var(--color-accent);
+
+    /* State colors */
+    --color-success:           #2ad06c;
+    --color-danger:            #ea3535;
 }
