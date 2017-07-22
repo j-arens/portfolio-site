@@ -5,10 +5,6 @@
         'contact-form'
     ];
 
-    print '<pre>';
-    var_dump($_SERVER['HTTP_HOST']);
-    print '</pre>';
-
 ?>
 
 <div id="js-forms" class="forms" data-nonce="<?= wp_create_nonce('wp_rest') ?>">
