@@ -173,8 +173,11 @@ function removeDefaultDescription($bloginfo) {
 
 add_filter('get_bloginfo_rss', __NAMESPACE__ . '\\removeDefaultDescription');
 
+/**
+* Only load jquery on admin and login screens
+*/
 function jqueryIsForSissies() {
-    if (is_admin()) return;
+    if (is_admin() || stripos($_SERVER['SCRIPT_NAME'], strchr(wp_login_url(), '/')) === true) return;
 
     wp_deregister_script('jquery');
     wp_register_script('jquery', '', '', '', true);

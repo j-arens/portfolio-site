@@ -18,10 +18,8 @@ export default class FormsController extends AjaxForm {
             toggles: null,
             root: null,
             anchor: null,
-            recaptchaLoaded: false
+            recaptchaLoaded: window.recaptchaLoaded
         }
-
-        window.recaptchaCB = () => this.state.recaptchaLoaded = true;
 
         this.cacheDom();
         this.bindEvents();
@@ -144,7 +142,7 @@ export default class FormsController extends AjaxForm {
             }
 
             if (this.state.flashInUse) {
-                this.flashMessage.remove();
+                this.flashMessage().remove();
             }
 
             this.state.anchor.insertAdjacentHTML('beforeend', `
@@ -173,7 +171,7 @@ export default class FormsController extends AjaxForm {
     mapFormValues() {
         if (!this.state.form) return;
 
-        const inputs = Array.from(this.state.form.querySelectorAll('*[name]'));
+        const inputs = Array.from(this.state.form.querySelectorAll('[name]'));
 
         return inputs.map(input => {
             if (!input.name.includes('recaptcha')) {
@@ -194,9 +192,13 @@ export default class FormsController extends AjaxForm {
 
         this.toggleSpinner();
 
+        const data = this.mapFormValues();
+        console.log(data);
+
         super.send({
-            url: this.state.form.querySelector('input[data-ajaxurl]').value,
-            data: {formValues: this.mapFormValues()}
+            url: '/wp-json/forms/v1/submit',
+            nonce: this.state.root.dataset.nonce,
+            data: {formValues: data}
         }).then(() => {
             this.flashMessage().append('success', 'Thanks! I\'ll get back to you as soon as I can.');
         }).catch(() => {

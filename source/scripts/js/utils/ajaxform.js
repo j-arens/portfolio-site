@@ -5,15 +5,16 @@ export default class AjaxForm {
      * Create new xhr post request object and return it
      * @param {string} url 
      */
-    newPostRequest(url) {
-        if (!url) {
-            console.error('AjaxForm: No url passed to the newPostRequest method!');
+    newPostRequest(url, nonce) {
+        if (!url || !nonce) {
+            console.error('AjaxForm: No url or nonce passed to the newPostRequest method!');
             return false;
         }
 
         const req = new XMLHttpRequest();
         req.open('POST', url, true);
-        req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        req.setRequestHeader('Content-Type', 'application/json');
+        req.setRequestHeader('X-WP-NONCE', nonce);
         return req;
     }
 
@@ -57,13 +58,13 @@ export default class AjaxForm {
      * Create and send off a xhr post request
      * @param {object} config 
      */
-    send({ url, data }) {
+    send({ url, data, nonce }) {
         if (!url) {
             console.error('AjaxForm: No url passed to the send method!');
             return false;
         }
 
-        const req = this.newPostRequest(url);
+        const req = this.newPostRequest(url, nonce);
         return this.promisify(req, data);
     }
 }

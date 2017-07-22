@@ -1,16 +1,17 @@
 .topography-bg {
-    display: none;
     position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0;
     mix-blend-mode: color-dodge;
     pointer-events: none;
 }
 
-.topography-bg--is-visible {
-    display: block;
+body.supports-mixBlendMode {
+    & .topography-bg {
+        opacity: 0.1;
+    }
 }

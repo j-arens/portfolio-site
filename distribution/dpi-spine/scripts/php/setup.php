@@ -24,21 +24,21 @@ add_filter('admin_footer_text', function() {
          'all'
     );
 
-    //  override css
-     wp_enqueue_style(
-        'spine-override-css', 
-        get_template_directory_uri() . '/override.css', 
-        ['spine-style'], 
-        filemtime(get_template_directory() . '/override.css'),
-        'all'
-    );
-
     // theme js
     wp_enqueue_script(
         'spine-js', 
         assetPath( 'scripts/js/bundle.js' ), 
         ['jquery'], 
         filemtime(get_template_directory() . '/scripts/js/bundle.js'), 
+        true
+    );
+
+    // recaptcha
+    wp_enqueue_script(
+        'g-recaptcha',
+        '//www.google.com/recaptcha/api.js?onload=recaptchaCB&render=explicit',
+        null,
+        false,
         true
     );
 

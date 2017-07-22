@@ -16,7 +16,7 @@
     <?= get_template_part('svg/topography') ?>
     <script>
       if ('mixBlendMode' in document.body.style) {
-        document.querySelector('.topography-bg').classList.add('topography-bg--is-visible');
+          document.body.classList.add('supports-mixBlendMode');
       }
     </script>
     <div class="wrap" role="document">
