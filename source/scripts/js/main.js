@@ -3,12 +3,14 @@ require('babel-polyfill');
 
 // import local dependencies
 import { docReady } from './utils/docReady';
-// import { crossPoly } from './cross-poly';
 import FormsController from './formsController';
+import ProjectsSlider from './projectsSlider';
 
 // recaptcha init
 window.recaptchaLoaded = false;
 window.recaptchaCB = () => window.recaptchaLoaded = true;
 
-// docReady(crossPoly);
-docReady(() => new FormsController());
+docReady(
+    () => new FormsController(),
+    () => new ProjectsSlider()
+);
