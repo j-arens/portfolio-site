@@ -3,16 +3,16 @@
         <figure class="profile__avatar">
             <img src="https://source.unsplash.com/random/250x250" alt="mugshot" class="profile__img">
         </figure>
-        <h1 class="profile__name">Joshua Arens</h1>
-        <h2 class="profile__tagline">Web Developer / Designer</h2>
-        <p class="profile__location">Grand Rapids, MI</p>
+        <h1 class="profile__name">Name Here</h1>
+        <h2 class="profile__tagline">Position Here</h2>
+        <p class="profile__location">The Location</p>
     </div>
     <div class="profile__contact">
         <button class="btn btn-primary profile__btn js-forms-toggle" data-formclass="js-hire-me">
-            Hire Me
+            Button 1
         </button>
         <button class="btn btn-secondary profile__btn js-forms-toggle" data-formclass="js-contact-me">
-            Contact Me
+            Button 2
         </button>
     </div>
     <div class="profile__code-links">

@@ -59,7 +59,7 @@ a {
 }
 
 hr {
-    border-bottom: var(--base-border);
+    border-bottom: 1px solid var(--color-neutral-dk);
     border-left: none;
     border-right: none;
     border-top: none;

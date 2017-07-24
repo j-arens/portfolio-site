@@ -5,10 +5,10 @@ body.home {
     }
 
     & .profile {
-        width: calc(33.3333% - 1em);
+        width: calc(30% - 1.5em);
     }
 
     & .resume {
-        width: calc(66% - 1em);
+        width: calc(70% - 1.5em);
     }
 }

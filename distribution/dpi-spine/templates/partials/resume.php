@@ -1,3 +1,3 @@
 <section class="card resume">
-    Resume
+    <?= get_template_part('partials/projects') ?>
 </section>
