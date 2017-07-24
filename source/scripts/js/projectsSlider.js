@@ -1,6 +1,9 @@
 import anime from 'animejs';
 
 export default class ProjectsSlider {
+    /**
+     * Init
+     */
     constructor() {
         this.state = {
             previousSlide: 0,
@@ -15,6 +18,9 @@ export default class ProjectsSlider {
         this.bindEvents();
     }
 
+    /**
+     * Disable or enable controls
+     */
     updateControls() {
         this.state.anchors[this.state.previousSlide].classList.remove('projects__anchor--is-active');
         this.state.anchors[this.state.currentSlide].classList.add('projects__anchor--is-active');
@@ -28,6 +34,10 @@ export default class ProjectsSlider {
         }
     }
 
+    /**
+     * Change the slider to to a new slide by index
+     * @param {number} idx 
+     */
     toggleSlide(idx = 0) {
         if (!this.state.slides[idx] || idx === this.state.currentSlide) return;
 
@@ -56,6 +66,10 @@ export default class ProjectsSlider {
         this.updateControls();
     }
 
+    /**
+     * Route click events
+     * @param {object} e 
+     */
     handleAction(e) {
         const action = e.target.dataset.action;
 
@@ -74,6 +88,9 @@ export default class ProjectsSlider {
         }
     }
 
+    /**
+     * Setup event listeners
+     */
     bindEvents() {
         try {
             this.state.root.addEventListener('click', this.handleAction.bind(this));
@@ -82,6 +99,9 @@ export default class ProjectsSlider {
         }
     }
 
+    /**
+     * Cache working nodes
+     */
     cacheDom() {
         this.state.root = document.getElementById('js-projects');
         this.state.slides = Array.from(this.state.root.querySelectorAll('.js-projects-slide'));
