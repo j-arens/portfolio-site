@@ -1,3 +1,35 @@
+<?php 
+
+    $socialLinks = [
+        [
+            'link' => '#',
+            'link_text' => 'jarens@diocesan.com',
+            'icon' => 'email'
+        ],
+        [
+            'link' => '#',
+            'link_text' => 'linkedin.com/in/j-arens',
+            'icon' => 'linkedin'
+        ],
+        [
+            'link' => '//open.spotify.com/user/interllarco',
+            'link_text' => 'open.spotify.com/user/interllarco',
+            'icon' => 'spotify'
+        ],
+        [
+            'link' => '//instagram.com/jrsteetboys',
+            'link_text' => 'instagram.com/jrsteetboys',
+            'icon' => 'instagram'
+        ],
+        [
+            'link' => '#',
+            'link_text' => 'Source code for this site',
+            'icon' => 'code'
+        ]
+    ];
+
+?>
+
 <section class="card profile">
     <div class="profile__person">
         <figure class="profile__avatar">
@@ -36,37 +68,15 @@
         </a>
     </div>
     <ul class="profile__social-links">
-        <li class="profile__social-link-item">
-            <a href="#" class="profile__social-link">
-                <span class="profile__link-icon">
-                    <?= get_template_part('svg/email') ?>
-                </span>
-                jarens@diocesan.com
-            </a>
-        </li>
-        <li class="profile__social-link-item">
-            <a href="#" class="profile__social-link">
-                <span class="profile__link-icon">
-                    <?= get_template_part('svg/linkedin') ?>
-                </span>
-                linkedin.com/in/j-arens
-            </a>
-        </li>
-        <li class="profile__social-link-item">
-            <a href="#" class="profile__social-link">
-                <span class="profile__link-icon">
-                    <?= get_template_part('svg/spotify') ?>
-                </span>
-                open.spotify.com/user/intellarco
-            </a>
-        </li>
-        <li class="profile__social-link-item">
-            <a href="#" class="profile__social-link">
-                <span class="profile__link-icon">
-                    <?= get_template_part('svg/instagram') ?>
-                </span>
-                instagram.com/jrsteetboys
-            </a>
-        </li>
+        <?php foreach($socialLinks as $link) { ?>
+            <li class="profile__social-link-item">
+                <a href="<?= $link['link'] ?>" class="profile__social-link">
+                    <span class="profile__link-icon">
+                        <?= get_template_part('svg/' . $link['icon']) ?>
+                    </span>
+                    <?= $link['link_text'] ?>
+                </a>
+            </li>
+        <?php } ?>
     </ul>
 </section>
