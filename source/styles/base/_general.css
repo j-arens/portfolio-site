@@ -22,8 +22,8 @@ body {
     font-size: 16px;
     line-height: var(--base-line-height);
     max-width: 1920px;
-    margin: 0 auto;
-    padding: 3em;
+    margin: 0 auto 3em auto;
+    padding: 3em 3em 0 3em;
 }
 
 .wrap,

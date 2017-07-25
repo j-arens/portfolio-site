@@ -1,4 +1,5 @@
 .card {
+    min-height: 57em;
     background-color: var(--color-white);
     padding: 3em;
     border-radius: 3px;
