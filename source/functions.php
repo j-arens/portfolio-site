@@ -50,7 +50,8 @@ $spineIncludes = [
   'clean-up',
   'nice-search',
   'disable-trackbacks',
-  'form-handler'
+  'FormHandler',
+  'HomeFields'
 ];
 
 array_walk($spineIncludes, function ($file) {

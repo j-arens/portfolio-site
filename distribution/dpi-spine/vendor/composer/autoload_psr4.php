@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Spine\\Scripts\\' => array($baseDir . '/scripts'),
-    'Spine\\Lib\\' => array($baseDir . '/lib'),
-    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
+    'Spine\\scripts\\php\\' => array($baseDir . '/scripts/php'),
+    'Spine\\lib\\' => array($baseDir . '/lib'),
 );
