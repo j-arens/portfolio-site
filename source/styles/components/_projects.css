@@ -1,3 +1,7 @@
+.projects {
+    margin-bottom: 3em;
+}
+
 .projects__ {
     &title {
         font-size: 1.25em;

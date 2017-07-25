@@ -1,0 +1,42 @@
+.about {
+    display: flex;
+}
+
+.about__ {
+    &section {
+        flex: 1;
+    }
+
+    &section + &section {
+        margin-left: 3em;
+    }
+
+    &title {
+        font-size: 1.25em;
+        margin-bottom: 1.1em;
+        text-transform: uppercase;
+    }
+
+    &hr {
+        margin: 1em 0 1.6em 0;
+    }
+
+    &item {
+        padding-left: 2.5em;
+    }
+
+    &item + &item {
+        margin-top: 1.5em;
+    }
+
+    &item-meta {
+        color: var(--color-neutral-dk);
+        font-size: 0.9em;
+        margin-bottom: 0.75rem;
+    }
+
+    &item-title {
+        font-size: 1.1em;
+        margin-bottom: 0.75rem;
+    }
+}
