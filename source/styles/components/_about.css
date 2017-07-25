@@ -75,4 +75,28 @@
         margin-right: .25em;
         fill: var(--color-neutral);
     }
+
+    &item-skills {
+        display: flex;
+        font-size: 0.9em;
+        color: var(--color-accent);
+    }
+
+    &item-skill + &item-skill {
+        position: relative;
+        margin-left: 1em;
+        text-align: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -0.65em;
+            width: 0.3em;
+            height: 0.3em;
+            transform: translateY(-50%);
+            background-color: var(--color-neutral);
+            border-radius: 50%;
+        }
+    }
 }
