@@ -7,7 +7,7 @@ use Spine\Scripts\PHP\assetPath;
 * Change admin footer message
 */
 add_filter('admin_footer_text', function() {
-    echo 'Designed and developed by <a href="//diocesan.com" target="_blank">Diocesan Publications</a>. Powered by <a href="//wordpress.org">WordPress<a/>.';
+    echo 'Designed and developed by <a href="//github.com/j-arens" target="_blank">Joshua Arens</a>. Powered by <a href="//wordpress.org">WordPress<a/>.';
 });
 
 /**

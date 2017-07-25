@@ -91,6 +91,12 @@ gulp.task('js', () => gulp.src('./source/scripts/js/main.js')
     .pipe(gulp.dest(path.resolve(env.distPath + '/scripts/js')))
 );
 
+gulp.task('single-js', () => gulp.src('./source/scripts/js/single/**/*.js')
+    .pipe(named())
+    .pipe(webpack(require('./webpack.single.js')))
+    .pipe(gulp.dest(path.resolve(env.distPath + '/scripts/js')))
+);
+
 /**
 * Assets
 */
@@ -138,7 +144,7 @@ gulp.task('watch', function() {
   gulp.watch('./source/styles/**/*.css', ['styles']);
 
   // js scripts
-  gulp.watch('./source/scripts/js/**/*.js', ['js']);
+  gulp.watch('./source/scripts/js/**/*.js', ['js', 'single-js']);
 
   //php
   gulp.watch('./source/**/*.php', ['migrate']);
@@ -158,7 +164,7 @@ gulp.task('watch', function() {
 /**
 * Gulp commands
 */
-gulp.task('build', ['styles', 'js', 'assets', 'migrate']);
+gulp.task('build', ['styles', 'js', 'single-js', 'assets', 'migrate']);
 
 gulp.task('build-watch', ['build', 'watch']);
 
