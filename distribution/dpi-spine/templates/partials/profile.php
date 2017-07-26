@@ -1,4 +1,4 @@
-<?php use Spine\Scripts\php\Profile; ?>
+<?php use Spine\scripts\php\Profile; ?>
 
 <section class="card profile">
     <div class="profile__person">

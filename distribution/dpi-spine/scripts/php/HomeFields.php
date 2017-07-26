@@ -8,7 +8,8 @@ use Carbon_Fields\Field;
 class HomeFields extends CustomFields {
 
     public $callbacks = [
-        'profile'
+        'profile',
+        'about'
     ];
 
     public $hideEditorOn = [
@@ -54,6 +55,43 @@ class HomeFields extends CustomFields {
         ];
 
         return Container::make('post_meta', 'Profile')
+            ->show_on_post_type('page')
+            ->show_on_template('templates/front-page.php')
+            ->add_fields($fields);
+    }
+
+    protected function about() {
+        $skillIcons = [
+            'globe' => 'Globe',
+            'javascript' => 'Javascript',
+            'php' => 'PHP'
+        ];
+
+        $fields = [
+            Field::make('complex', 'resume', 'Resume')
+                ->set_layout('tabbed-vertical')
+                ->set_max(3)
+                ->add_fields('Job', [
+                    Field::make('text', 'Job Date'),
+                    Field::make('text', 'Job Role'),
+                    Field::make('text', 'Job Link URL'),
+                    Field::make('text', 'Job Link Text')
+                ]),
+            Field::make('complex', 'skills', 'Skills')
+                ->set_layout('tabbed-vertical')
+                ->set_max(3)
+                ->add_fields('Skill', [
+                    Field::make('text', 'Skill Level'),
+                    Field::make('text', 'Skill Name'),
+                    Field::make('select', 'Skill Icon')->add_options($skillIcons),
+                    Field::make('complex', 'skill_keywords', 'Skill Keywords')
+                        ->add_fields('Keyword', [
+                            Field::make('text', 'Keyword')
+                        ])
+                ])
+        ];
+
+        return Container::make('post_meta', 'about')
             ->show_on_post_type('page')
             ->show_on_template('templates/front-page.php')
             ->add_fields($fields);
