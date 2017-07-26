@@ -1,78 +1,18 @@
-<?php
-
-    $jobs = [
-        [
-            'date' => '2015 - present',
-            'icon' => 'case',
-            'role' => 'Product Designer',
-            'link' => '#',
-            'link_text' => 'Dropbox'
-        ],
-        [
-            'date' => '2012 - 2015',
-            'icon' => 'case',
-            'role' => 'Designer / Developer',
-            'link' => '#',
-            'link_text' => 'Facebook'
-        ],
-        [
-            'date' => '2009 - 2012',
-            'icon' => 'case',
-            'role' => 'Web Developer',
-            'link' => '#',
-            'link_text' => 'Google'
-        ]
-    ];
-
-    $skills = [
-        [
-            'level' => 'Advanced',
-            'skill' => 'HTML & CSS',
-            'icon' => 'globe',
-            'keywords' => [
-                'Semantic',
-                'Post CSS',
-                'Animations & Transitions'
-            ]
-        ],
-        [
-            'level' => 'Intermediate',
-            'skill' => 'Javascript',
-            'icon' => 'javascript',
-            'keywords' => [
-                'ES6',
-                'Node',
-                'React',
-                'Webpack & Gulp'
-            ]
-        ],
-        [
-            'level' => 'Intermediate',
-            'skill' => 'PHP',
-            'icon' => 'php',
-            'keywords' => [
-                'OOP',
-                'Composer',
-                'WordPress'
-            ]
-        ],
-    ];
-
-?>
+<?php use Spine\scripts\php\About; ?>
 
 <div class="about">
     <div class="work about__section">
         <p class="about__title">Work Experience</p>
         <hr class="about__hr">
         <ul class="about__list">
-            <?php foreach($jobs as $job) { ?>
+            <?php foreach(About::getJobs() as $job) { ?>
                 <li class="about__item">
-                    <p class="about__item-meta"><?= $job['date'] ?></p>
+                    <p class="about__item-meta"><?= $job['job_date'] ?></p>
                     <p class="about__item-title">
-                        <span class="about__item-icon"><?= get_template_part('svg/' . $job['icon']) ?></span>
-                        <?= $job['role'] ?>
+                        <span class="about__item-icon"><?= get_template_part('svg/case') ?></span>
+                        <?= $job['job_role'] ?>
                     </p>
-                    <a href="<?= $job['link'] ?>" class="about__item-link"><?= $job['link_text'] ?></a>
+                    <a href="<?= $job['job_link_url'] ?>" class="about__item-link"><?= $job['job_link_text'] ?></a>
                 </li>
             <?php } ?>
         </ul>
@@ -81,16 +21,16 @@
         <p class="about__title">Areas of Skill</p>
         <hr class="about__hr">
         <ul class="about__list">
-            <?php foreach($skills as $skill) { ?>
+            <?php foreach(About::getSkills() as $skill) { ?>
                 <li class="about__item">
-                    <p class="about__item-meta"><?= $skill['level'] ?></p>
+                    <p class="about__item-meta"><?= $skill['skill_level'] ?></p>
                     <p class="about__item-title">
-                        <span class="about__item-icon"><?= get_template_part('svg/' . $skill['icon']) ?></span>
-                        <?= $skill['skill'] ?>
+                        <span class="about__item-icon"><?= get_template_part('svg/' . $skill['skill_icon']) ?></span>
+                        <?= $skill['skill_name'] ?>
                     </p>
                     <ul class="about__item-skills">
-                        <?php foreach($skill['keywords'] as $keyword) { ?>
-                            <li class="about__item-skill"><?= $keyword ?></li>
+                        <?php foreach($skill['skill_keywords'] as $keyword) { ?>
+                            <li class="about__item-skill"><?= $keyword['keyword'] ?></li>
                         <?php } ?>
                     </ul>
                 </li>
