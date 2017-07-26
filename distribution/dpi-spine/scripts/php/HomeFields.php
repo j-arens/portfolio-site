@@ -34,7 +34,7 @@ class HomeFields extends CustomFields {
             Field::make('text', 'name', 'Name'),
             Field::make('text', 'role', 'Role'),
             Field::make('text', 'location', 'Location'),
-            Field::make('complex', 'Code Links')
+            Field::make('complex', 'code_links', 'Code Links')
                 ->set_layout('tabbed-vertical')
                 ->set_max(2)
                 ->add_fields('Link', [
@@ -43,7 +43,7 @@ class HomeFields extends CustomFields {
                     Field::make('text', 'Link Domain Name'),
                     Field::make('text', 'Link Path Name')
                 ]),
-            Field::make('complex', 'Social Links')
+            Field::make('complex', 'social_links', 'Social Links')
                 ->set_layout('tabbed-vertical')
                 ->set_max(5)
                 ->add_fields('Link', [

@@ -1,96 +1,22 @@
-<?php
+<?php use Spine\scripts\php\Projects;
 
-    $projects = [
-        [
-            'name' => 'Project 1',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/158642/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 2',
-            'type' => 'PHP',
-            'thumbnail' => '//source.unsplash.com/collection/353844/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 3',
-            'type' => 'Javascript',
-            'thumbnail' => '//source.unsplash.com/collection/521499/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 4',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/506238/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 5',
-            'type' => 'Javascript',
-            'thumbnail' => '//source.unsplash.com/collection/521499/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 6',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/506238/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 7',
-            'type' => 'Javascript',
-            'thumbnail' => '//source.unsplash.com/collection/521499/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 8',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/506238/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 9',
-            'type' => 'Javascript',
-            'thumbnail' => '//source.unsplash.com/collection/521499/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 10',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/506238/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 11',
-            'type' => 'Javascript',
-            'thumbnail' => '//source.unsplash.com/collection/521499/500x500',
-            'link' => '#'
-        ],
-        [
-            'name' => 'Project 12',
-            'type' => 'WordPress',
-            'thumbnail' => '//source.unsplash.com/collection/506238/500x500',
-            'link' => '#'
-        ]
-    ];
-
-    $projectChunks = array_chunk($projects, 4);
+    $Projects = new Projects();
+    $projectChunks = array_chunk($Projects->getProjects(), 4);
 
     function generateSlide($projects, $i) {
         ?>
             <li class="projects__slide js-projects-slide" style="left: <?= ($i * 100) . '%' ?>">
                 <?php foreach($projects as $project) { ?>
                     <div class="projects__item">
-                        <figure class="projects__window">
-                            <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="nooopener">
+                        <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="nooopener">
+                            <figure class="projects__window">
                                 <span class="projects__screenshot" style="background-image: url(<?= $project['thumbnail'] ?>)"></span>
                                 <span class="projects__link-meta">
                                     <p class="projects__link-text">View Project</p>
                                     <?= get_template_part('svg/browser-link') ?>
                                 </span>
-                            </a>
-                        </figure>
+                            </figure>
+                        </a>
                         <p class="projects__name"><?= $project['name'] ?></p>
                         <p class="projects__type"><?= $project['type'] ?></p>
                     </div>
@@ -120,7 +46,7 @@
                 <?php endif; ?>
             <?php } ?>
         </ul>
-        <button class="projects__control" data-action="NEXT">
+        <button class="projects__control <?= count($pojectChunks) <= 4 ? 'projects__control--is-disabled' : '' ?>" data-action="NEXT">
             <?= get_template_part('svg/chevron-right') ?>
         </button>
     </nav>
