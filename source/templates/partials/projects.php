@@ -8,15 +8,15 @@
             <li class="projects__slide js-projects-slide" style="left: <?= ($i * 100) . '%' ?>">
                 <?php foreach($projects as $project) { ?>
                     <div class="projects__item">
-                        <figure class="projects__window">
-                            <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="nooopener">
+                        <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="nooopener">
+                            <figure class="projects__window">
                                 <span class="projects__screenshot" style="background-image: url(<?= $project['thumbnail'] ?>)"></span>
                                 <span class="projects__link-meta">
                                     <p class="projects__link-text">View Project</p>
                                     <?= get_template_part('svg/browser-link') ?>
                                 </span>
-                            </a>
-                        </figure>
+                            </figure>
+                        </a>
                         <p class="projects__name"><?= $project['name'] ?></p>
                         <p class="projects__type"><?= $project['type'] ?></p>
                     </div>
