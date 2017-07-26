@@ -35,11 +35,24 @@
         margin-left: 2em;
     }
 
+    &link,
+    &screenshot {
+        width: 100%;
+        height: 100%;
+    }
+
+    &link {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 13em;
+        margin-bottom: 1.25em;
+    }
+
     &window {
         position: relative;
-        height: 13em;
+        height: 100%;
         background-color: var(--color-primary);
-        margin-bottom: 1.25em;
         border-radius: 3px;
         box-shadow: 1px 2px 10px 2px rgba(193,216,224,.4);
         overflow: hidden;
@@ -92,16 +105,6 @@
                 text-indent: 0;
             }
         }
-    }
-
-    &link,
-    &screenshot {
-        width: 100%;
-        height: 100%;
-    }
-
-    &link {
-        position: relative;
     }
 
     &screenshot {

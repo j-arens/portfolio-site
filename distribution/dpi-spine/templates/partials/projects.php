@@ -1,14 +1,15 @@
 <?php use Spine\scripts\php\Projects;
 
     $Projects = new Projects();
-    $projectChunks = array_chunk($Projects->getProjects(), 4);
+    $allProjects = $Projects->getProjects();
+    $projectChunks = array_chunk($allProjects, 4);
 
     function generateSlide($projects, $i) {
         ?>
             <li class="projects__slide js-projects-slide" style="left: <?= ($i * 100) . '%' ?>">
                 <?php foreach($projects as $project) { ?>
                     <div class="projects__item">
-                        <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="nooopener">
+                        <a class="projects__link" href="<?= $project['link'] ?>" target="_blank" rel="noopener" data-action="VIEW">
                             <figure class="projects__window">
                                 <span class="projects__screenshot" style="background-image: url(<?= $project['thumbnail'] ?>)"></span>
                                 <span class="projects__link-meta">
@@ -46,7 +47,7 @@
                 <?php endif; ?>
             <?php } ?>
         </ul>
-        <button class="projects__control <?= count($pojectChunks) <= 4 ? 'projects__control--is-disabled' : '' ?>" data-action="NEXT">
+        <button class="projects__control <?= count($allProjects) <= 4 ? 'projects__control--is-disabled' : '' ?>" data-action="NEXT">
             <?= get_template_part('svg/chevron-right') ?>
         </button>
     </nav>
