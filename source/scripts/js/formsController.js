@@ -175,7 +175,6 @@ export default class FormsController extends AjaxForm {
         this.toggleSpinner();
 
         const data = this.mapFormValues();
-        console.log(data);
 
         super.send({
             url: '/wp-json/forms/v1/submit',
