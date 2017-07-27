@@ -1,7 +1,6 @@
 'use-strict';
 
 import AjaxForm from './utils/ajaxform';
-import anime from 'animejs';
 
 export default class FormsController extends AjaxForm {
     /**
@@ -81,23 +80,6 @@ export default class FormsController extends AjaxForm {
                     </svg>
                 </div>
             `);
-
-            anime({
-                targets: '.spinner__circle',
-                rotate: '1turn',
-                easing: 'linear',
-                duration: 2000,
-                loop: true
-            });
-
-            anime({
-                targets: '.spinner__circle',
-                strokeDashoffset: [anime.setDashoffset, 0],
-                easing: 'linear',
-                duration: 1000,
-                loop: true,
-                direction: 'alternate'
-            });
 
             this.state.spinning = true;
         }

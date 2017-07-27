@@ -1,3 +1,6 @@
+/**
+* Pulse button
+*/
 @keyframes pulse-button {
     from {
         transform: translate(-50%, -50%) scale(0);
@@ -10,6 +13,9 @@
     }
 }
 
+/**
+* Fade In
+*/
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -20,6 +26,9 @@
     }
 }
 
+/**
+* Fade In Scale
+*/
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -29,5 +38,31 @@
     to {
         opacity: 1;
         transform: scale(1)
+    }
+}
+
+/**
+* Spinner Rotate
+*/
+@keyframes spinnerRotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/**
+* Spinner Swing
+*/
+@keyframes spinnerSwing {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 64;
     }
 }

@@ -22,6 +22,10 @@
         stroke-width: 1;
         stroke-linecap: round;
         stroke: var(--color-accent);
+        stroke-dasharray: 64;
         transform-origin: center center;
+        animation: 
+            spinnerSwing 1s linear infinite alternate,
+            spinnerRotate 2s linear infinite;
     }
 }
