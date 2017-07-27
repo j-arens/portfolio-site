@@ -33,7 +33,7 @@
     <ul class="profile__social-links">
         <?php foreach(Profile::getSocialLinks() as $link) { ?>
             <li class="profile__social-link-item">
-                <a href="<?= $link['link'] ?>" class="profile__social-link">
+                <a href="<?= $link['link_url'] ?>" class="profile__social-link">
                     <span class="profile__link-icon">
                         <?= get_template_part('svg/' . $link['icon']) ?>
                     </span>
