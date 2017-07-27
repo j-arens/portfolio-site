@@ -28,7 +28,7 @@
     }
 
     &item {
-        flex: 1;
+        flex: 0 0 calc(25% - 1.5em);
     }
 
     &item + &item {

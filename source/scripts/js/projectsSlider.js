@@ -46,7 +46,7 @@ export default class ProjectsSlider {
 
         anime({
             targets: slides,
-            easing: 'easeInQuint',
+            easing: 'easeOutQuint',
             duration: 250,
             left: (el) => {
                 const currentPos = parseInt(el.style.left);
