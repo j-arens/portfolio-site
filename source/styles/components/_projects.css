@@ -17,22 +17,25 @@
         position: relative;
         overflow: hidden;
         margin-bottom: 2.25em;
-        height: 17em;
+        height: 36em;
     }
 
     &slide {
         display: flex;
+        flex-wrap: wrap;
         position: absolute;
         top: 0;
         width: 100%;
+        padding: 0 0.5em;
     }
 
     &item {
-        flex: 0 0 calc(25% - 1.5em);
-    }
+        flex: 0 0 calc(50% - 1em);
+        margin-bottom: 2em;
 
-    &item + &item {
-        margin-left: 2em;
+        &:nth-of-type(even) {
+            margin-left: 2em;
+        }
     }
 
     &link,
@@ -235,5 +238,26 @@
 
     &anchor + &anchor {
         margin-left: 1em;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .projects__ {
+        &slider {
+            height: 17em;
+        }
+
+        &slide {
+            flex-wrap: initial;
+        }
+
+        &item {
+            flex: 0 0 calc(25% - 1.5em);
+            margin-bottom: 0;
+        }
+
+        &item + &item {
+            margin-left: 2em;
+        }
     }
 }

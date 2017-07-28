@@ -1,19 +1,23 @@
-body.home {
-    & .main {
-        display: flex;
-        justify-content: space-between;
-    }
 
-    & .profile,
-    & .resume {
-        min-height: 59em;
-    }
 
-    & .profile {
-        width: calc(30% - 1.5em);
-    }
+@media screen and (min-width: 103.125em) {
+    body.home {
+        & .main {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    & .resume {
-        width: calc(70% - 1.5em);
+        & .profile,
+        & .resume {
+            min-height: 59em;
+        }
+
+        & .profile {
+            width: calc(30% - 1.5em);
+        }
+
+        & .resume {
+            width: calc(70% - 1.5em);
+        }
     }
 }

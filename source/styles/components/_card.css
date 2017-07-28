@@ -1,6 +1,29 @@
+:root {
+    --card {
+        background-color: var(--color-white);
+        padding: 3em;
+        border-radius: 3px;
+        box-shadow: 2px 3px 10px 1px rgba(193, 216, 224, 0.5);
+    };
+}
+
 .card {
-    background-color: var(--color-white);
-    padding: 3em;
-    border-radius: 3px;
-    box-shadow: 2px 3px 10px 1px rgba(193, 216, 224, 0.5);
+    @apply --card;
+}
+
+.card-bp-md {
+    @apply --card;
+}
+
+@media screen and (min-width: 103.125em) {
+    .card-bp-md {
+        background-color: initial;
+        padding: initial;
+        border-radius: initial;
+        box-shadow: initial;
+    }
+
+    .card-bp-lg {
+        @apply --card;
+    }
 }
