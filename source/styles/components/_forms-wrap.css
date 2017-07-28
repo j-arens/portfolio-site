@@ -2,8 +2,6 @@
     opacity: 0;
     pointer-events: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,6 +9,8 @@
     width: 100%;
     height: 100%;
     background-color: rgba(188, 207, 214, 0.95);
+    overflow-y: auto;
+    padding: 1em;
 }
 
 .forms__ {
@@ -36,16 +36,45 @@
         }
     }
 
+    &toggle-mb {
+        padding: 0;
+        width: 2.5em;
+        height: 2.5em;
+        top: 2em;
+        right: 2em;
+        z-index: 2;
+    }
+
+    &toggle-dk {
+        display: none;
+    }
+
     &anchor {
         position: relative;
         max-width: 50em;
         width: 100%;
-        margin: 0 auto;
+        margin: auto;
     }
 
     &container {
         display: none;
-        padding: 3em;
+        padding: 6em 2em 2em 2em;
+    }
+}
+
+@media screen and (min-width: 71.875em) {
+    .forms__ {
+        &container {
+            padding: 3em;
+        }
+
+        &toggle-mb {
+            display: none;
+        }
+
+        &toggle-dk {
+            display: flex;
+        }
     }
 }
 

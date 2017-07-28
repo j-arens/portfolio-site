@@ -1,4 +1,7 @@
 <div class="forms__container card js-contact-me js-form-container">
+    <button class="forms__toggle forms__toggle-mb btn js-forms-toggle">
+        <?= get_template_part('svg/x') ?>
+    </button>
     <form class="contact__form">
         <label>
             <p>Full Name*</p>

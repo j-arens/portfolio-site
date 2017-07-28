@@ -1,7 +1,7 @@
 <?php use Spine\scripts\php\Profile; ?>
 
 <section class="profile card-bp-lg">
-    <div class="profile__half card-bp-md">
+    <div class="profile__half profile__half-me card-bp-md">
         <div class="profile__person">
             <figure class="profile__avatar">
                 <img src="<?= Profile::getAvatar() ?>" alt="mugshot" class="profile__img">

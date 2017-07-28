@@ -8,7 +8,7 @@
 ?>
 
 <div id="js-forms" class="forms" data-nonce="<?= wp_create_nonce('wp_rest') ?>">
-    <button class="forms__toggle btn btn-primary js-forms-toggle">
+    <button class="forms__toggle forms__toggle-dk btn btn-primary js-forms-toggle">
         <?= get_template_part('svg/x') ?>
         Close
     </button>
