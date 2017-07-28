@@ -43,6 +43,12 @@
         top: 2em;
         right: 2em;
         z-index: 2;
+
+        & .svg-icon__x {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
     }
 
     &toggle-dk {
