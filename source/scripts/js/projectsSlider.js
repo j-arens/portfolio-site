@@ -71,17 +71,6 @@ export default class ProjectsSlider {
      * @param {object} e 
      */
     handleAction(e) {
-        // let action = false;
-
-        // const propPath = e.propPath();
-        // const projectLink = propPath.filter(el => el.dataset.action ? el : false);
-
-        // if (projectLink) {
-        //     action = 'VIEW';
-        // } else {
-        //     action = e.target.dataset.action;
-        // }
-
         const action = e.target.dataset.action;
 
         if (!action) return;
@@ -96,10 +85,6 @@ export default class ProjectsSlider {
             case 'ANCHOR':
                 this.toggleSlide(parseInt(e.target.dataset.anchorindex));
                 break;
-            // case 'VIEW':
-            //     if (!window.hasOwnProperty('ProjectViewer')) return;
-            //     e.preventDefault();
-            //     window.ProjectViewer.open(projectLink[0].href);
         }
     }
 
