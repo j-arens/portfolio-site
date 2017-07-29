@@ -12,7 +12,7 @@
                         <span class="about__item-icon"><?= get_template_part('svg/case') ?></span>
                         <?= $job['job_role'] ?>
                     </p>
-                    <a href="<?= $job['job_link_url'] ?>" class="about__item-link"><?= $job['job_link_text'] ?></a>
+                    <a href="<?= $job['job_link_url'] ?>" class="about__item-link" target="_blank" rel="noopener"><?= $job['job_link_text'] ?></a>
                 </li>
             <?php } ?>
         </ul>

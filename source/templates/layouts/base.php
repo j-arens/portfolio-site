@@ -3,6 +3,12 @@
   <?php get_template_part('partials/head'); ?>
   <body <?php body_class(); ?>>
 
+    <noscript>
+        <p class="browserupgrade">
+            You need to have JavaScript enabled to properly view this site.
+        </p>
+    </noscript>
+
     <!-- warn IE users to upgrade to a better browser -->
     <script>
         if (!(window.ActiveXObject) && 'ActiveXObject' in window) {
