@@ -41,8 +41,8 @@ class Projects {
             $themeSlug = get_blog_option($site->blog_id, 'stylesheet');
 
             return [
-                'name' => wp_trim_words(get_blog_option($site->blog_id, 'blogname'), 4, '...'),
-                'type' => wp_trim_words(get_blog_option($site->blog_id, 'blogdescription'), 4, '...'),
+                'name' => wp_trim_words(get_blog_option($site->blog_id, 'blogname'), 3, '...'),
+                'type' => wp_trim_words(get_blog_option($site->blog_id, 'blogdescription'), 3, '...'),
                 'thumbnail' => $this->getThumbnail($themes, $themeSlug),
                 'link' => get_blog_option($site->blog_id, 'siteurl ')
             ];
