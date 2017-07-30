@@ -4,14 +4,21 @@ namespace Spine\scripts\php;
 
 class FormHandler {
 
+    private $recaptchaSiteKey = '6Ldx3ikUAAAAADA4FiEGLuQKssZdjAsKphpNHXpx';
     private $recipient = 'arens.joshua@sbcglobal.net';
 
+    /**
+    * Setup wordpress mail config options
+    */
     public function configMail() {
         add_filter('wp_mail_content_type', function($type) {return 'text/html';});
         add_filter('wp_mail_from_name', function() {return 'Portfolio Site';});
         add_filter('wp_mail_from', function() {return 'wordpress@' . $_SERVER['HTTP_HOST'];});
     }
 
+    /**
+    * Register rest api form routes
+    */
     public function registerFormRoutes() {
         add_action('rest_api_init', function() {
             register_rest_route('forms/v1', '/submit', [
@@ -21,8 +28,35 @@ class FormHandler {
         });
     }
 
+    /**
+    * Validate recaptcha responses
+    */
+    private function validateRecaptcha($recaptchaRes) {
+        if (!$recaptchaRes) return false;
+
+        $recaptchaValid = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+            'body' => [
+                'secret' => $this->recaptchaSiteKey,
+                'response' => $recaptchaRes
+            ]
+        ]);
+
+        if (is_wp_error($recaptchaValid) || !json_decode($recaptchaValid['body'])->success) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+    * Route and validate form submissions, rest route callback
+    */
     public function handleSubmission(\WP_REST_Request $req) {
         $params = $req->get_json_params();
+
+        if (!$this->validateRecaptcha($params['recaptchaRes'])) {
+            return new \WP_Error('recaptcha_invalid', 'Recaptcha Invalid', 409);
+        }
 
         if (!empty($params) && array_key_exists('formValues', $params)) {
             wp_mail($this->recipient, 'New Form Submission', $this->emailTemplate($params['formValues']));
@@ -32,6 +66,9 @@ class FormHandler {
         return new \WP_Error('validation_error', 'No foram values sent.', 400);
     }
 
+    /**
+    * Generate email body and template
+    */
     private function emailTemplate($data) {
         $body = array_reduce($data, function($prevInput, $curInput) {
             return $prevInput . '<p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:2px;">' . $curInput['name'] . ': ' . $curInput['value'] . '</p>' . PHP_EOL;

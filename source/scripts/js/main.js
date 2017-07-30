@@ -6,10 +6,6 @@ import { docReady } from './utils/docReady';
 import FormsController from './formsController';
 import ProjectsSlider from './projectsSlider';
 
-// recaptcha init
-window.recaptchaLoaded = false;
-window.recaptchaCB = () => window.recaptchaLoaded = true;
-
 if (document.body.classList.contains('error404')) {
     console.log('404');
 } else {

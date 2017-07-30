@@ -16,8 +16,7 @@ export default class FormsController extends AjaxForm {
             form: null,
             toggles: null,
             root: null,
-            anchor: null,
-            recaptchaLoaded: window.recaptchaLoaded
+            anchor: null
         }
 
         this.cacheDom();
@@ -35,12 +34,16 @@ export default class FormsController extends AjaxForm {
      * Render out a google recaptcha on the current form
      */
     renderRecaptcha() {
-        if (!this.state.recaptchaLoaded) return;
+        if (!window.recaptchaLoaded) return;
 
         const recaptchaRoot = this.state.form.querySelector('.js-recaptcha-root');
 
         if (!recaptchaRoot.hasChildNodes()) {
-            window.grecaptcha.render(recaptchaRoot, {sitekey: '6Ldx3ikUAAAAADU72JAjpgb6_RSVQ9X2dicy7tiL'});
+            const ID = window.grecaptcha.render(recaptchaRoot, {sitekey: '6Ldx3ikUAAAAADU72JAjpgb6_RSVQ9X2dicy7tiL'});
+            recaptchaRoot.dataset.recaptchaID = ID;
+        } else {
+            const ID = recaptchaRoot.dataset.recaptchaID;
+            window.grecaptcha.reset(ID);
         }
     }
 
@@ -175,15 +178,23 @@ export default class FormsController extends AjaxForm {
         this.toggleSpinner();
 
         const data = this.mapFormValues();
+        const recaptchaID = this.state.form.querySelector('.js-recaptcha-root').dataset.recaptchaID;
 
         super.send({
             url: '/wp-json/forms/v1/submit',
             nonce: this.state.root.dataset.nonce,
-            data: {formValues: data}
+            data: {
+                recaptchaRes: window.grecaptcha.getResponse(recaptchaID), 
+                formValues: data
+            }
         }).then(() => {
             this.flashMessage().append('success', 'Thanks! I\'ll get back to you as soon as I can.');
-        }).catch(() => {
-            this.flashMessage().append('danger', 'Uh oh, there was an error! Please email me directly at arens.joshua@sbcglobal.net.');
+        }).catch((res) => {
+            if (JSON.parse(res.response).code === 'recaptcha_invalid') {
+                this.flashMessage().append('danger', 'Invalid recaptcha response, please try again.');
+            } else {
+                this.flashMessage().append('danger', 'Uh oh, there was an error! Please email me directly at arens.joshua@sbcglobal.net.');
+            }
         });
     }
 

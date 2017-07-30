@@ -1,1 +1,1 @@
-<div class="g-recaptcha js-recaptcha-root"></div>
+<div class="g-recaptcha js-recaptcha-root" data-sitekey="6Ldx3ikUAAAAADU72JAjpgb6_RSVQ9X2dicy7tiL"></div>

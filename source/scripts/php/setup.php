@@ -35,15 +35,6 @@ add_filter('admin_footer_text', function() {
         true
     );
 
-    // recaptcha
-    wp_enqueue_script(
-        'g-recaptcha',
-        '//www.google.com/recaptcha/api.js?onload=recaptchaCB&render=explicit',
-        null,
-        false,
-        true
-    );
-
  }, 100);
 
 /**
