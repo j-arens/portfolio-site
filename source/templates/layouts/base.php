@@ -19,14 +19,6 @@
         }
     </script>
 
-    <!--  feature detect mix-blend-mode  -->
-    <script>
-      if ('mixBlendMode' in document.body.style) {
-          document.body.classList.add('supports-mixBlendMode');
-      }
-    </script>
-
-    <?= get_template_part('svg/topography') ?>
     <div class="wrap" role="document">
       <main class="main">
         <?php load_template(Spine\scripts\php\template()->main()); ?>
